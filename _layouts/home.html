@@ -1,100 +1,52 @@
 ---
 layout: page
+toc: true
 # The Home page layout
 ---
 
 {% include lang.html %}
+<p> </p>
 
-{% assign pinned = site.posts | where: "pin", "true" %}
-{% assign default = site.posts | where_exp: "item", "item.pin != true" %}
+<div style="width: 32%;float:right;display: flex;">
+  <img src="{{ 'assets/img/Profile copy 4.jpeg' | relative_url }}" alt="Garvit" onerror="this.style.display='none'" width="210" >
+</div>
+<div>
+  <p>
+    I am currently working as a Data Scientist at SAP Labs India, Bengaluru. 
+    I completed my undergraduate (B.Tech) from <a href="https://www.iitbhu.ac.in/dept/eee" >Department of Electrical Engineering</a> at <a href="https://www.iitbhu.ac.in/">Indian Institute of Technology (B.H.U) Varanasi</a>. 
+    My B. Tech. project was based on Applciations of Probabilistic Graphical Models under the guidance of <a href="https://sites.google.com/site/kvsrinivas/">Prof. K.V. Srinivas</a> and <a href="https://www.iitbhu.ac.in/dept/eee/people/sghosheee" >Prof. Sandip Ghosh</a>. 
+    I also worked in <a href="http://www.ee.iisc.ac.in/people/faculty/kunal/">LISA Lab</a> with <a href="Kunal Narayan Chaudhury">Prof. Kunal Narayan Chaudhury</a> on Computer Vision. For more details, please refer to my <a href="{{ 'assets/files/Garvit_Resume.pdf' | relative_url }}">CV</a>.
+  </p>
+  <p>
+    My primary research interests are in Machine Learning, Optimization and Operations Research. 
+    Currently, I am excited about the potential of probabilistic and graphical methods in Neural Networks such as Graph Neural Networks, Message Passing Neural Networks, Belief Propagation Neural Networks. 
+    I am particularly interested in their applications in decision-making and medical diagnosis.
+  </p>
+  <!-- <p>
+    I also enjoy Economics. I am excited . 
+  </p> -->
+  <p>
+    Using the principles from <a href="https://www.calnewport.com/books/deep-work/">Cal Newton's Deep Work</a> as my guide, I intend to approach my graduate studies with the same fervor and commitment as he did. 
+    I like to use my learnings from <a href="https://charlesduhigg.com/the-power-of-habit/">Charles Duhigg's The Power of Habit</a> to observe habits and routines in nature and organizations and try to develop ones that best suit me.
+  </p>
+</div>    
 
-{% assign posts = "" | split: "" %}
+{% comment %}
+{% capture my_include %}{% include_relative _tabs/education.md %}{% endcapture %}
+{{ my_include | markdownify }}
+{% endcomment %}
 
-<!-- Get pinned posts -->
-
-{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign pinned_num = pinned.size | minus: offset %}
-
-{% if pinned_num > 0 %}
-  {% for i in (offset..pinned.size) limit: pinned_num %}
-    {% assign posts = posts | push: pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_num = 0 %}
-{% endif %}
-
-
-<!-- Get default posts -->
-
-{% assign default_beg = offset | minus: pinned.size %}
-
-{% if default_beg < 0 %}
-  {% assign default_beg = 0 %}
-{% endif %}
-
-{% assign default_num = paginator.posts | size | minus: pinned_num  %}
-{% assign default_end = default_beg | plus: default_num | minus: 1 %}
-
-{% if default_num > 0 %}
-  {% for i in (default_beg..default_end) %}
-    {% assign posts = posts | push: default[i] %}
-  {% endfor %}
-{% endif %}
-
-<div id="post-list">
-
-{% for post in posts %}
-
-  <div class="post-preview">
-    <h1>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        {% include no-linenos.html content=post.content %}
-        {{ content | markdownify | strip_html | truncate: 200 | escape }}
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        {% include timeago.html date=post.date tooltip=true %}
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        {% include read-time.html content=post.content %}
-
-        <!-- categories -->
-        {% if post.categories.size > 0 %}
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          {% for category in post.categories %}
-            {{ category }}
-            {%- unless forloop.last -%},{%- endunless -%}
-          {% endfor %}
-          </span>
-        {% endif %}
-      </div>
-
-      {% if post.pin %}
-      <div class="pin">
-        <i class="fas fa-thumbtack fa-fw"></i>
-        <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-      </div>
-      {% endif %}
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-{% endfor %}
-
-</div> <!-- #post-list -->
-
-{% if paginator.total_pages > 0 %}
-  {% include post-paginator.html %}
-{% endif %}
+<!-- <div style="width: 30%;float:left;display: flex;">
+<img src="{{ 'assets/img/Profile copy 4.jpeg' | relative_url }}" alt="Garvit" onerror="this.style.display='none'" width="210" >
+</div>
+<div style="width:70%;float:right;">
+<p>
+  I am currently working as a Data Scientist at SAP Labs India, Bengaluru. I completed my undergraduate (B.Tech) from <a href="https://www.iitbhu.ac.in/dept/eee" >Department of Electrical Engineering</a> at <a href="https://www.iitbhu.ac.in/">Indian Institute of Technology (B.H.U) Varanasi</a>. My B. Tech. project was based on Probabilistic Graphical Models under guidance of <a href="https://sites.google.com/site/kvsrinivas/">Prof. K.V. Srinivas</a> and <a href="https://www.iitbhu.ac.in/dept/eee/people/sghosheee" >Prof. Sandip Ghosh</a>. {% link /assets/files/Garvit_Resume.pdf %}
+</p>
+<p>
+  My primary research interests are in Machine Learning, Optimization and Operations Research. I am excited about the potential of probabilistic and graphical methods in Neural Networks such as Graph Neural Networks, Message Passing Neural Networks, Belief Propagation Neural Networks. I am particularly interested in their applications in decision-making and medical diagnosis.
+</p>
+<p>
+  I also enjoy Economics. I am excited about the potential of probabilistic and graphical methods in Neural Networks such as Graph Neural Networks, Message Passing Neural Networks, Belief Propagation Neural Networks. 
+</p>
+</div>     -->

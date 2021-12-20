@@ -21,7 +21,7 @@ timezone: Asia/Kolkata
 
 title: Garvit Mohata                          # the main title
 
-tagline: Personal Homepage   # it will display as the sub-title
+tagline: Personal Website # Homepage   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -35,7 +35,13 @@ github:
   username: mohatagarvit             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: GarvitMohata            # change to your twitter username
+
+linkedin:
+  username: mohatagarvit
+
+stackoverflow:
+  username: users/10822746/gemspark  
 
 social:
   # Change to your full name.
@@ -44,8 +50,9 @@ social:
   email: mohatagarvit@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/mohatagarvit       # change to your github homepage
+    - https://twitter.com/GarvitMohata      # change to your twitter homepage
+    
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -73,7 +80,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: light   # [light|dark]
+theme_mode:  # light   # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -83,8 +90,8 @@ theme_mode: light   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
-
+avatar: 'assets/img/Profile copy.jpeg' # Profile.jpeg' Convo1.png
+# {{ '_media/Convo1.png' | relative_url }}
 # boolean type, the global switch for ToC in posts.
 toc: true
 
@@ -136,6 +143,7 @@ defaults:
       type: tabs             # see `site.collections`
     values:
       layout: page
+      toc: true
       permalink: /:title/
 
 sass:
