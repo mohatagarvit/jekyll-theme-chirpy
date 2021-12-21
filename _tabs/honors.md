@@ -3,7 +3,7 @@ layout: page
 toc: true
 title: Honors & Awards
 icon: fas fa-stream
-order: 4
+order: 8
 ---
 
 ## Fellowships
