@@ -33,6 +33,7 @@ panel:
 date_format:
   tooltip: '%a, %b %e, %Y, %l:%M %p %z'
   post:
+    standard: '%b %Y'
     long: '%b %e, %Y'
     short: '%b %e'
     archive_month: '%b'
@@ -61,9 +62,11 @@ not_found:
 # ----- Posts related labels -----
 
 post:
-  written_by: By
-  posted: Posted
-  updated: Updated
+  guide: Guide
+  institute: Institute
+  organization: Organization
+  posted: Duration
+  updated: '-'
   timeago:
     day: days ago
     hour: hours ago
@@ -86,6 +89,33 @@ post:
       succeed: Link copied successfully!
   # pinned prompt of posts list on homepage
   pin_prompt: Pinned
+
+# post:
+#   written_by: By
+#   posted: Posted
+#   updated: Updated
+#   timeago:
+#     day: days ago
+#     hour: hours ago
+#     minute: minutes ago
+#     just_now: just now
+#   words: words
+#   pageview_measure: views
+#   read_time:
+#     unit: min
+#     prompt: read
+#   relate_posts: Further Reading
+#   share: Share
+#   button:
+#     next: Newer
+#     previous: Older
+#     copy_code:
+#       succeed: Copied!
+#     share_link:
+#       title: Copy link
+#       succeed: Link copied successfully!
+#   # pinned prompt of posts list on homepage
+#   pin_prompt: Pinned
 
 # categories page
 categories:

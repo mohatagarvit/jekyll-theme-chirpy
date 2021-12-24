@@ -30,5 +30,5 @@ order: 1
 
 | Institute               | Role/Position/Title           |  Duration   | 
 |:------:|:-------------:|--------:|
-| SAP Labs India, Bengaluru | Data Scientist | Jul 2019 - Present | 
-| Goldman Sachs, Bengaluru | Quantitative Analyst    | May 2018 - Jul 2018 |
+| [SAP Labs India, Bengaluru](/categories/sap-labs/) | Data Scientist | Jul 2019 - Present | 
+| [Goldman Sachs, Bengaluru](/categories/goldman-sachs/) | Quantitative Analyst    | May 2018 - Jul 2018 |
