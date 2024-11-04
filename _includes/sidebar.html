@@ -40,6 +40,7 @@
     </ul>
   </nav>
 
+  <!-- <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> -->
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     {% unless site.theme_mode %}
       <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
@@ -53,9 +54,13 @@
 
     {% for entry in site.data.contact %}
       {% case entry.type %}
-        {% when 'github', 'twitter' %}
+        {% when 'github', 'twitter', 'stackoverflow' %}
           {%- capture url -%}
             https://{{ entry.type }}.com/{{ site[entry.type].username }}
+          {%- endcapture -%}
+        {% when 'linkedin' %}
+          {%- capture url -%}
+            https://{{ entry.type }}.com/in/{{ site[entry.type].username }}
           {%- endcapture -%}
         {% when 'email' %}
           {% assign email = site.social.email | split: '@' %}
@@ -64,6 +69,8 @@
           {%- endcapture -%}
         {% when 'rss' %}
           {% assign url = '/feed.xml' | relative_url %}
+        {% when 'resume' %}
+          {% assign url = {{ 'assets/files/Garvit_resume.pdf' | relative_url }} %}
         {% else %}
           {% assign url = entry.url %}
       {% endcase %}
@@ -95,3 +102,4 @@
   <!-- .sidebar-bottom -->
 </aside>
 <!-- #sidebar -->
+

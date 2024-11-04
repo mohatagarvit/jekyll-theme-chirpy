@@ -1,14 +1,28 @@
 #  The contact options.
 
-- type: github
-  icon: "fab fa-github"
-
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
-
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
+
+- type: github
+  icon: 'fab fa-github'
+
+- type: linkedin
+  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+  # url:  ''                  # Fill with your Linkedin homepage
+
+- type: stackoverflow
+  icon: 'fab fa-stack-overflow'
+  # url:  ''                  # Fill with your stackoverflow homepage
+
+- type: twitter
+  icon: 'fab fa-twitter'
+
+- type: resume
+  icon: 'faf fa-file-pdf-o'
+
+# - type: twitter
+#   icon: "fa-brands fa-x-twitter"
 
 - type: rss
   icon: "fas fa-rss"
@@ -38,3 +52,8 @@
 # - type: threads
 #   icon: 'fa-brands fa-threads'
 #   url: ''                   # Fill with your Threads profile link
+#   url:  ''                  # Fill with your mastodon account page
+# -
+#   type: rss
+#   icon: 'fas fa-rss'
+#   noblank: true
