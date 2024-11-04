@@ -22,21 +22,24 @@ tabs:
 search:
   hint: search
   cancel: Cancel
-  no_results: Oops! No result founds.
+  no_results: Oops! No results found.
 
 panel:
-  lastmod: Recent Update
-  trending_tags: Common Tags
+  lastmod: Recently Updated
+  trending_tags: Trending Tags
   toc: Contents
 
-#  The liquid date format › http://strftime.net/
-date_format:
-  tooltip: '%a, %b %e, %Y, %l:%M %p %z'
-  post:
-    standard: '%b %Y'
-    long: '%b %e, %Y'
-    short: '%b %e'
-    archive_month: '%b'
+  # lastmod: Recent Update
+  # trending_tags: General Tags # Common
+
+# #  The liquid date format › http://strftime.net/
+# date_format:
+#   tooltip: '%a, %b %e, %Y, %l:%M %p %z'
+#   post:
+#     standard: '%b %Y'
+#     long: '%b %e, %Y'
+#     short: '%b %e'
+#     archive_month: '%b'
 
 copyright:
   # Shown at the bottom of the post
@@ -54,14 +57,18 @@ copyright:
 # meta: Powered by :PLATFORM with :THEME theme.
 
 not_found:
-  statment: Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
-  hint_template: :HEAD_BAK to try finding it again, or search for it on the :ARCHIVES_PAGE.
-  head_back: Head back Home
-  archives_page: Archives page
+  statement: Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
+
+notification:
+  update_found: A new version of content is available.
+  update: Update
 
 # ----- Posts related labels -----
 
 post:
+  # written_by: By
+  # posted: Posted
+  # updated: Updated
   guide: Guide
   institute: Institute
   organization: Organization
@@ -87,8 +94,16 @@ post:
     share_link:
       title: Copy link
       succeed: Link copied successfully!
-  # pinned prompt of posts list on homepage
-  pin_prompt: Pinned
+
+# Date time format.
+# See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
+df:
+  post:
+    strftime: "%b %e, %Y"
+    dayjs: "ll"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"
 
 # post:
 #   written_by: By
@@ -119,5 +134,9 @@ post:
 
 # categories page
 categories:
-  category_measure: categories
-  post_measure: posts
+  category_measure:
+    singular: category
+    plural: categories
+  post_measure:
+    singular: post
+    plural: posts
